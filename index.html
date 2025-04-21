@@ -2,226 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Food for Hunger</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
   <style>
     body {
+      font-family: Arial, sans-serif;
+      background-color: #f4fff4;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9fff9;
-      color: #2e4d2e;
+      padding: 0;
     }
 
-    /* HEADER */
-    .main-header {
-      background-color: #e6f9e6;
-      padding: 2rem 1rem;
-      border-bottom: 4px solid #98cb98;
+    header {
+      background-color: #a8e6a1;
+      padding: 20px;
       text-align: center;
+      color: #2f4f2f;
     }
 
-    .header-content {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .tagline {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-      color: #3a6b3a;
-    }
-
-    .toggle-button {
-      margin-top: 1.5rem;
-      background-color: #b4e0b4;
-      color: #1f3b1f;
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    .charity-note {
-      background-color: #f5fff5;
-      border: 2px dashed #b4e0b4;
-      padding: 1.5rem;
-      margin-top: 1.5rem;
-      border-radius: 12px;
-      display: flex;
-      gap: 1rem;
-      text-align: left;
-    }
-
-    .charity-note .icon {
-      font-size: 2rem;
-      flex-shrink: 0;
-      margin-top: 0.3rem;
-    }
-
-    .charity-text {
-      flex: 1;
-    }
-
-    .tamil-text {
-      font-family: 'Noto Sans Tamil', sans-serif;
-      margin-top: 1rem;
-      color: #2e5d2e;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    /* SECTIONS */
-    section {
-      padding: 3rem 1rem;
-      max-width: 960px;
-      margin: auto;
-    }
-
-    section h2 {
-      font-size: 2rem;
-      color: #2f602f;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-
-    /* GALLERY */
     .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 15px;
     }
 
     .gallery img {
-      width: 100%;
-      border-radius: 12px;
-      border: 3px solid #cdeccc;
-    }
-
-    /* CONTACT FORM */
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      padding: 0.75rem;
-      border: 2px solid #bfe6bf;
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
       border-radius: 8px;
-      font-size: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
 
-    .contact-form button {
-      background-color: #8ccf8c;
-      color: white;
-      border: none;
-      padding: 0.75rem;
-      font-size: 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .contact-form button:hover {
-      background-color: #74b874;
-    }
-
-    /* FOOTER */
-    footer {
+    .description {
+      padding: 20px;
       text-align: center;
-      background-color: #d8f5d8;
-      padding: 1rem;
-      color: #2e4d2e;
+      max-width: 800px;
+      margin: auto;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .charity-note {
-        flex-direction: column;
-      }
-    }
-
-    .hidden {
-      display: none;
+    .description p {
+      margin: 10px 0;
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="main-header">
-    <div class="header-content">
-      <h1>Food for Hunger</h1>
-      <p class="tagline">Spreading joy through every meal</p>
-      <button class="toggle-button" onclick="toggleNote()">Show / Hide Charity Message</button>
-
-      <div class="charity-note hidden" id="charityNote">
-        <span class="icon">🙏</span>
-        <div class="charity-text">
-          <p><strong>Food charity is appreciated but entirely your choice.</strong> It is optional, not mandatory.</p>
-          <p>You can contribute food to those in need as a way to celebrate your or your family’s special events, like birthdays or wedding anniversaries, and receive blessings in return.</p>
-          <p>Recommending specific organizations or individuals for donations goes against the guidelines of our community.</p>
-          <p class="tamil-text">
-            <strong>உணவு சேவை வரவேற்கப்படுகின்றது, ஆனால் இது முழுவதுமாக உங்கள் தேர்வாகும். இது கட்டாயமல்ல, விருப்பமானது மட்டுமே.</strong>
-          </p>
-          <p class="tamil-text">
-            உங்கள் பிறந்தநாள், திருமண ஆண்டு விழா போன்ற சிறப்பு நிகழ்ச்சிகளை கொண்டாட தேவையானவர்களுக்கு உணவை வழங்கலாம், இதன் மூலம் ஆசீர்வாதங்களை பெறலாம்.
-          </p>
-          <p class="tamil-text">
-            குறிப்பிட்ட அமைப்புகள் அல்லது தனிநபர்களுக்காக நன்கொடை வழங்க பரிந்துரைப்பது, எங்கள் சமூகத்தின் வழிகாட்டுதல்களுக்கு எதிரானதாகும்.
-          </p>
-        </div>
-      </div>
-    </div>
+  <header>
+    <h1>Food for Hunger</h1>
+    <p>Serving food to the needy — One meal at a time</p>
   </header>
 
-  <!-- ABOUT US -->
-  <section id="about">
-    <h2>About Us</h2>
+  <div class="description">
     <p>
-      "Food for Hunger" is a voluntary initiative that serves fresh meals and water bottles to people in need — especially on meaningful days like birthdays, anniversaries, or religious occasions. In the past 3 years, over 100,000 meals have been shared with love and care. 
+      Food charity is appreciated but entirely your choice. It is optional, not mandatory. You can contribute food to those in need as a way to celebrate your or your family’s special events, like Birthdays or wedding anniversaries, and receive blessings in return.
     </p>
     <p>
-      Started by Mrs. Kavitha Prabhu, a compassionate socialist, our mission is simple: help others and spread joy through food.
+      Recommending specific organizations or individuals for donations goes against the guidelines of our community.
     </p>
-  </section>
+    <p>
+      உணவு சேவை வரவேற்கப்படுகின்றது, ஆனால் இது முழுவதுமாக உங்கள் தேர்வாகும். இது கட்டாயமல்ல, விருப்பமானது மட்டுமே.
+    </p>
+    <p>
+      உங்கள் பிறந்தநாள், திருமண ஆண்டு விழா போன்ற சிறப்பு நிகழ்ச்சிகளை கொண்டாட தேவையானவர்களுக்கு உணவை வழங்கலாம், இதன் மூலம் ஆசீர்வாதங்களை பெறலாம்.
+    </p>
+    <p>
+      குறிப்பிட்ட அமைப்புகள் அல்லது தனிநபர்களுக்காக நன்கொடை வழங்க பரிந்துரைப்பது, எங்கள் சமூகத்தின் வழிகாட்டுதல்களுக்கு எதிரானதாகும்.
+    </p>
+  </div>
 
-  <!-- GALLERY -->
-  <section id="gallery">
-    <h2>Gallery</h2>
-<div class="gallery">
-  <img src="https://raj18051989.github.io/food-for-hunger/images/food1.jpg" alt="Meal Distribution 1">
-  <img src="https://github.com/raj18051989/food-for-hunger/blob/main/images/food2.jfif" alt="Meal Distribution 2">
-  <img src="https://github.com/raj18051989/food-for-hunger/blob/main/images/food3.jfif" alt="Volunteers Serving">
-   <img src="https://github.com/raj18051989/food-for-hunger/blob/main/images/food4.jfif.jfif" alt="Volunteers Serving">
-</div>
-
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    &copy; 2025 Food for Hunger. All rights reserved.
-  </footer>
-
-  <script>
-    function toggleNote() {
-      const note = document.getElementById('charityNote');
-      note.classList.toggle('hidden');
-    }
-  </script>
+  <div class="gallery">
+    <img src="https://raj18051989.github.io/food-for-hunger/images/food1.jpg" alt="Meal Distribution 1">
+    <img src="https://raj18051989.github.io/food-for-hunger/images/food2.jpg" alt="Meal Distribution 2">
+    <img src="https://raj18051989.github.io/food-for-hunger/images/food3.jpg" alt="Volunteers Serving">
+    <img src="https://raj18051989.github.io/food-for-hunger/images/food4.jpg" alt="Serving Smiles">
+  </div>
 
 </body>
 </html>
