@@ -4,83 +4,222 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Food for Hunger</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f5fff5;
       margin: 0;
-      padding: 0;
-      color: #1f4d1f;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9fff9;
+      color: #2e4d2e;
     }
-    header, footer {
-      background-color: #d4f4d4;
+
+    /* HEADER */
+    .main-header {
+      background-color: #e6f9e6;
+      padding: 2rem 1rem;
+      border-bottom: 4px solid #98cb98;
       text-align: center;
-      padding: 1rem;
     }
-    h1, h2 {
-      margin: 0.5em 0;
+
+    .header-content {
+      max-width: 960px;
+      margin: 0 auto;
     }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      padding: 2rem;
+
+    .tagline {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: #3a6b3a;
     }
-    .gallery-item {
-      border: 2px solid #bdf2bd;
-      border-radius: 10px;
-      padding: 0.5rem;
-      width: 250px;
-      text-align: center;
-      background-color: #ffffff;
-    }
-    .gallery-item img {
-      max-width: 100%;
+
+    .toggle-button {
+      margin-top: 1.5rem;
+      background-color: #b4e0b4;
+      color: #1f3b1f;
+      padding: 0.5rem 1rem;
+      border: none;
       border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
     }
-    .contact {
-      padding: 2rem;
+
+    .charity-note {
+      background-color: #f5fff5;
+      border: 2px dashed #b4e0b4;
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      border-radius: 12px;
+      display: flex;
+      gap: 1rem;
+      text-align: left;
+    }
+
+    .charity-note .icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+      margin-top: 0.3rem;
+    }
+
+    .charity-text {
+      flex: 1;
+    }
+
+    .tamil-text {
+      font-family: 'Noto Sans Tamil', sans-serif;
+      margin-top: 1rem;
+      color: #2e5d2e;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 3rem 1rem;
+      max-width: 960px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: #2f602f;
+      margin-bottom: 1rem;
       text-align: center;
+    }
+
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      border: 3px solid #cdeccc;
+    }
+
+    /* CONTACT FORM */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 0.75rem;
+      border: 2px solid #bfe6bf;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      background-color: #8ccf8c;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #74b874;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      background-color: #d8f5d8;
+      padding: 1rem;
+      color: #2e4d2e;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .charity-note {
+        flex-direction: column;
+      }
+    }
+
+    .hidden {
+      display: none;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Food for Hunger</h1>
-    <p>Started by Mrs. Kavitha Prabhu, a compassionate socialist, our mission is simple: help others and spread joy through food.</p>
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="header-content">
+      <h1>Food for Hunger</h1>
+      <p class="tagline">Spreading joy through every meal</p>
+      <button class="toggle-button" onclick="toggleNote()">Show / Hide Charity Message</button>
+
+      <div class="charity-note hidden" id="charityNote">
+        <span class="icon">🙏</span>
+        <div class="charity-text">
+          <p><strong>Food charity is appreciated but entirely your choice.</strong> It is optional, not mandatory.</p>
+          <p>You can contribute food to those in need as a way to celebrate your or your family’s special events, like birthdays or wedding anniversaries, and receive blessings in return.</p>
+          <p>Recommending specific organizations or individuals for donations goes against the guidelines of our community.</p>
+          <p class="tamil-text">
+            <strong>உணவு சேவை வரவேற்கப்படுகின்றது, ஆனால் இது முழுவதுமாக உங்கள் தேர்வாகும். இது கட்டாயமல்ல, விருப்பமானது மட்டுமே.</strong>
+          </p>
+          <p class="tamil-text">
+            உங்கள் பிறந்தநாள், திருமண ஆண்டு விழா போன்ற சிறப்பு நிகழ்ச்சிகளை கொண்டாட தேவையானவர்களுக்கு உணவை வழங்கலாம், இதன் மூலம் ஆசீர்வாதங்களை பெறலாம்.
+          </p>
+          <p class="tamil-text">
+            குறிப்பிட்ட அமைப்புகள் அல்லது தனிநபர்களுக்காக நன்கொடை வழங்க பரிந்துரைப்பது, எங்கள் சமூகத்தின் வழிகாட்டுதல்களுக்கு எதிரானதாகும்.
+          </p>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <section class="gallery">
-    <h2 style="width: 100%; text-align: center;">Gallery</h2>
-    <div class="gallery-item">
-      <img src="images/food1.jpg" alt="Meal Distribution 1" />
-      <p>Meal Distribution 1</p>
-    </div>
-    <div class="gallery-item">
-      <img src="images/food2.jpg" alt="Meal Distribution 2" />
-      <p>Meal Distribution 2</p>
-    </div>
-    <div class="gallery-item">
-      <img src="images/food3.jpg" alt="Volunteers Serving" />
-      <p>Volunteers Serving</p>
-    </div>
-    <div class="gallery-item">
-      <img src="images/food4.jpg" alt="Community Support" />
-      <p>Community Support</p>
+  <!-- ABOUT US -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      "Food for Hunger" is a voluntary initiative that serves fresh meals and water bottles to people in need — especially on meaningful days like birthdays, anniversaries, or religious occasions. In the past 3 years, over 100,000 meals have been shared with love and care. 
+    </p>
+    <p>
+      Started by Mrs. Kavitha Prabhu, a compassionate socialist, our mission is simple: help others and spread joy through food.
+    </p>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/300x200.png?text=Meal+Distribution+1" alt="Gallery Image 1">
+      <img src="https://via.placeholder.com/300x200.png?text=Meal+Distribution+2" alt="Gallery Image 2">
+      <img src="https://via.placeholder.com/300x200.png?text=Volunteers+Serving" alt="Gallery Image 3">
     </div>
   </section>
 
-  <section class="contact">
+  <!-- CONTACT -->
+  <section id="contact">
     <h2>Contact Us</h2>
-    <p>Email: foodforhunger@gmail.com</p>
-    <p>Phone: +91 94437 76006</p>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Food for Hunger. All rights reserved.</p>
+    &copy; 2025 Food for Hunger. All rights reserved.
   </footer>
+
+  <script>
+    function toggleNote() {
+      const note = document.getElementById('charityNote');
+      note.classList.toggle('hidden');
+    }
+  </script>
 
 </body>
 </html>
