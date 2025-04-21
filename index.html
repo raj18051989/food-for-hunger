@@ -2,49 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Food for Hunger</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4fff4;
+      background-color: #f5fff5;
       margin: 0;
       padding: 0;
+      color: #1f4d1f;
     }
-
-    header {
-      background-color: #a8e6a1;
-      padding: 20px;
+    header, footer {
+      background-color: #d4f4d4;
       text-align: center;
-      color: #2f4f2f;
+      padding: 1rem;
     }
-
+    h1, h2 {
+      margin: 0.5em 0;
+    }
     .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      padding: 20px;
-      gap: 15px;
+      gap: 1rem;
+      padding: 2rem;
     }
-
-    .gallery img {
-      width: 300px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-
-    .description {
-      padding: 20px;
+    .gallery-item {
+      border: 2px solid #bdf2bd;
+      border-radius: 10px;
+      padding: 0.5rem;
+      width: 250px;
       text-align: center;
-      max-width: 800px;
-      margin: auto;
+      background-color: #ffffff;
     }
-
-    .description p {
-      margin: 10px 0;
-      line-height: 1.6;
+    .gallery-item img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .contact {
+      padding: 2rem;
+      text-align: center;
     }
   </style>
 </head>
@@ -52,33 +49,38 @@
 
   <header>
     <h1>Food for Hunger</h1>
-    <p>Serving food to the needy — One meal at a time</p>
+    <p>Started by Mrs. Kavitha Prabhu, a compassionate socialist, our mission is simple: help others and spread joy through food.</p>
   </header>
 
-  <div class="description">
-    <p>
-      Food charity is appreciated but entirely your choice. It is optional, not mandatory. You can contribute food to those in need as a way to celebrate your or your family’s special events, like Birthdays or wedding anniversaries, and receive blessings in return.
-    </p>
-    <p>
-      Recommending specific organizations or individuals for donations goes against the guidelines of our community.
-    </p>
-    <p>
-      உணவு சேவை வரவேற்கப்படுகின்றது, ஆனால் இது முழுவதுமாக உங்கள் தேர்வாகும். இது கட்டாயமல்ல, விருப்பமானது மட்டுமே.
-    </p>
-    <p>
-      உங்கள் பிறந்தநாள், திருமண ஆண்டு விழா போன்ற சிறப்பு நிகழ்ச்சிகளை கொண்டாட தேவையானவர்களுக்கு உணவை வழங்கலாம், இதன் மூலம் ஆசீர்வாதங்களை பெறலாம்.
-    </p>
-    <p>
-      குறிப்பிட்ட அமைப்புகள் அல்லது தனிநபர்களுக்காக நன்கொடை வழங்க பரிந்துரைப்பது, எங்கள் சமூகத்தின் வழிகாட்டுதல்களுக்கு எதிரானதாகும்.
-    </p>
-  </div>
+  <section class="gallery">
+    <h2 style="width: 100%; text-align: center;">Gallery</h2>
+    <div class="gallery-item">
+      <img src="images/food1.jpg" alt="Meal Distribution 1" />
+      <p>Meal Distribution 1</p>
+    </div>
+    <div class="gallery-item">
+      <img src="images/food2.jpg" alt="Meal Distribution 2" />
+      <p>Meal Distribution 2</p>
+    </div>
+    <div class="gallery-item">
+      <img src="images/food3.jpg" alt="Volunteers Serving" />
+      <p>Volunteers Serving</p>
+    </div>
+    <div class="gallery-item">
+      <img src="images/food4.jpg" alt="Community Support" />
+      <p>Community Support</p>
+    </div>
+  </section>
 
-  <div class="gallery">
-    <img src="https://raj18051989.github.io/food-for-hunger/images/food1.jpg" alt="Meal Distribution 1">
-    <img src="https://raj18051989.github.io/food-for-hunger/images/food2.jpg" alt="Meal Distribution 2">
-    <img src="https://raj18051989.github.io/food-for-hunger/images/food3.jpg" alt="Volunteers Serving">
-    <img src="https://raj18051989.github.io/food-for-hunger/images/food4.jpg" alt="Serving Smiles">
-  </div>
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p>Email: foodforhunger@gmail.com</p>
+    <p>Phone: +91 94437 76006</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Food for Hunger. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
