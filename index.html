@@ -35,6 +35,8 @@
       color: #2e4d2e;
     }
 
+
+
     .nav-links {
       display: flex;
       gap: 1rem;
@@ -323,22 +325,43 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
+
+
+
+
 </head>
 <body>
 
-  <nav>
-    <div class="nav-container">
-      <div class="nav-logo">Food for Hunger</div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#timeline">Timeline</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
 
-  <header class="main-header">
+
+
+
+
+
+  
+
+
+---------------------
+
+
+
+<header style="background-color: #d9fdd3; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+  <div style="display: flex; align-items: center;">
+  <img src="https://raj18051989.github.io/food-for-hunger/images/logo.png" alt="Food for Hunger Logo"  style="height: 100px; margin-right: 10px;">
+
+    <span style="font-size: 20px; font-weight: bold; color: #2e5f2e;">Food for Hunger</span>
+  </div>
+  <nav>
+    <a href="#about" style="margin: 0 10px; text-decoration: none; color: #2e5f2e;">About</a>
+    <a href="#gallery" style="margin: 0 10px; text-decoration: none; color: #2e5f2e;">Gallery</a>
+    <a href="#timeline" style="margin: 0 10px; text-decoration: none; color: #2e5f2e;">Timeline</a>
+    <a href="#contact" style="margin: 0 10px; text-decoration: none; color: #2e5f2e;">Contact</a>
+  </nav>
+    </div>
+</header>
+
+ <div class="main-header">
     <div class="header-content">
       <h1>Food for Hunger</h1>
       <p class="tagline">Spreading joy through every meal</p>
@@ -353,15 +376,23 @@
         </div>
       </div>
     </div>
-  </header>
+  </div>
+
+
 
   <section id="about">
     <h2>About Us</h2>
-    <p>"Food for Hunger" is a voluntary initiative that serves meals to the needy on meaningful days...</p>
-    <p>Started by Mrs. Kavitha Prabhu, a compassionate socialist...</p>
+<div class="timeline">
+
+    <div class="timeline-item"> Food for Hunger" is a voluntary initiative that serves meals to the needy on meaningful days...</div>
+     <div class="timeline-item">Started by Mrs. Kavitha Prabhu, a compassionate socialist...</div>
+
+ </div>
   </section>
 
-  <section class="meal-counter">
+
+
+ <section class="meal-counter">
     Meals Served: <span id="mealCount">100,000+</span>
   </section>
 
@@ -500,6 +531,7 @@
   </a>
 </div>
  	
+
 
 
 
