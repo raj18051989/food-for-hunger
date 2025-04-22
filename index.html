@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +6,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Food for Hunger</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background-color: #f9fff9;
       color: #2e4d2e;
+    }
+
+    nav {
+      background-color: #d4f5d4;
+      padding: 0.75rem 1rem;
+      border-bottom: 2px solid #a8dca8;
+    }
+
+    .nav-container {
+      max-width: 960px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #2e4d2e;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #2e4d2e;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #4c804c;
     }
 
     .main-header {
@@ -84,16 +122,36 @@
       text-align: center;
     }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+    .swiper {
+      width: 100%;
+      padding: 1rem 0;
     }
 
-    .gallery img {
+    .swiper-slide img {
       width: 100%;
+      height: auto;
       border-radius: 12px;
       border: 3px solid #cdeccc;
+    }
+
+    .timeline, .testimonials {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .timeline-item, .testimonial {
+      background-color: #eafbea;
+      padding: 1rem;
+      border-radius: 10px;
+      border-left: 4px solid #6bbf6b;
+    }
+
+    .meal-counter {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 2rem 0;
     }
 
     .contact-form {
@@ -124,6 +182,65 @@
       background-color: #74b874;
     }
 
+    .map-container {
+      margin-top: 2rem;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid #bfe6bf;
+    }
+
+    .whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-button img {
+  width: 32px;
+  height: 32px;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 75px;
+  right: 0;
+  background: #2e4d2e;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.whatsapp-button:hover .tooltip {
+  opacity: 1;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
     footer {
       text-align: center;
       background-color: #d8f5d8;
@@ -135,14 +252,91 @@
       .charity-note {
         flex-direction: column;
       }
+      .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
     }
 
     .hidden {
       display: none;
     }
+
+
+.social-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #2e4d2e;
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.75rem 0.75rem;
+  border-radius: 50px;
+  text-align: left;
+  transition: all 0.3s ease;
+  width: 48px;
+  overflow: hidden;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.social-btn i {
+  flex-shrink: 0;
+}
+
+.social-btn span {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.social-btn:hover {
+  width: 160px;
+  padding: 0.75rem 1rem;
+  border-radius: 30px;
+}
+
+.social-btn:hover span {
+  opacity: 1;
+  visibility: visible;
+}
+
+.social-btn.whatsapp { background-color: #25D366; }
+.social-btn.facebook { background-color: #3b5998; }
+.social-btn.instagram { background-color: #e4405f; }
+.social-btn.email { background-color: #0072c6; }
+.social-btn.youtube { background-color: #ff0000; }
+
+
   </style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
+
+  <nav>
+    <div class="nav-container">
+      <div class="nav-logo">Food for Hunger</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
 
   <header class="main-header">
     <div class="header-content">
@@ -154,17 +348,8 @@
         <span class="icon">🙏</span>
         <div class="charity-text">
           <p><strong>Food charity is appreciated but entirely your choice.</strong> It is optional, not mandatory.</p>
-          <p>You can contribute food to those in need as a way to celebrate your or your family’s special events, like birthdays or wedding anniversaries, and receive blessings in return.</p>
-          <p>Recommending specific organizations or individuals for donations goes against the guidelines of our community.</p>
-          <p class="tamil-text">
-            <strong>உணவு சேவை வரவேற்கப்படுகின்றது, ஆனால் இது முழுவதுமாக உங்கள் தேர்வாகும். இது கட்டாயமல்ல, விருப்பமானது மட்டுமே.</strong>
-          </p>
-          <p class="tamil-text">
-            உங்கள் பிறந்தநாள், திருமண ஆண்டு விழா போன்ற சிறப்பு நிகழ்ச்சிகளை கொண்டாட தேவையானவர்களுக்கு உணவை வழங்கலாம், இதன் மூலம் ஆசீர்வாதங்களை பெறலாம்.
-          </p>
-          <p class="tamil-text">
-            குறிப்பிட்ட அமைப்புகள் அல்லது தனிநபர்களுக்காக நன்கொடை வழங்க பரிந்துரைப்பது, எங்கள் சமூகத்தின் வழிகாட்டுதல்களுக்கு எதிரானதாகும்.
-          </p>
+          <p>You can contribute food to those in need as a way to celebrate your or your family’s special events...</p>
+          <p class="tamil-text"><strong>உணவு சேவை வரவேற்கப்படுகின்றது... கட்டாயமல்ல.</strong></p>
         </div>
       </div>
     </div>
@@ -172,44 +357,151 @@
 
   <section id="about">
     <h2>About Us</h2>
-    <p>
-      "Food for Hunger" is a voluntary initiative that serves fresh meals and water bottles to people in need — especially on meaningful days like birthdays, anniversaries, or religious occasions. In the past 3 years, over 100,000 meals have been shared with love and care. 
-    </p>
-    <p>
-      Started by Mrs. Kavitha Prabhu, a compassionate socialist, our mission is simple: help others and spread joy through food.
-    </p>
+    <p>"Food for Hunger" is a voluntary initiative that serves meals to the needy on meaningful days...</p>
+    <p>Started by Mrs. Kavitha Prabhu, a compassionate socialist...</p>
+  </section>
+
+  <section class="meal-counter">
+    Meals Served: <span id="mealCount">100,000+</span>
   </section>
 
   <section id="gallery">
     <h2>Gallery</h2>
-    <div class="gallery">
-      <img src="https://raj18051989.github.io/food-for-hunger/images/food1.jpg" alt="Meal Distribution 1">
-      <img src="https://raj18051989.github.io/food-for-hunger/images/food2.jpg" alt="Meal Distribution 2">
-      <img src="https://raj18051989.github.io/food-for-hunger/images/food3.jpg" alt="Volunteers Serving">
-      <img src="https://raj18051989.github.io/food-for-hunger/images/food4.jpg" alt="Serving Smiles">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="https://raj18051989.github.io/food-for-hunger/images/food1.jpg" /></div>
+        <div class="swiper-slide"><img src="https://raj18051989.github.io/food-for-hunger/images/food2.jpg" /></div>
+        <div class="swiper-slide"><img src="https://raj18051989.github.io/food-for-hunger/images/food3.jpg" /></div>
+        <div class="swiper-slide"><img src="https://raj18051989.github.io/food-for-hunger/images/food4.jpg" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <h2>Our Journey</h2>
+    <div class="timeline">
+      <div class="timeline-item">2022 - Initiative started by Kavitha Prabhu.</div>
+      <div class="timeline-item">2023 - Reached 50,000 meals milestone.</div>
+      <div class="timeline-item">2024 - Mobile food van launched.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Testimonials</h2>
+    <div class="testimonials">
+      <div class="testimonial">"Inspiring and heartwarming initiative!" – S. Kumar</div>
+      <div class="testimonial">"We celebrated our anniversary by feeding 100 people." – R. Priya</div>
     </div>
   </section>
 
   <section id="contact">
     <h2>Contact Us</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+      <form class="contact-form" action="https://formspree.io/f/mnndaegb" method="POST" id="contactForm">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <!-- Confirmation message -->
+  <p id="formConfirmation" style="display:none; padding: 1rem; border-radius: 8px; font-weight: bold; background-color: #e6ffe6; border: 2px solid #8ccf8c; color: #2e662e; margin-top: 1rem;">
+    ✅ Thank you! Your message has been sent.
+  </p>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3915.555569748829!2d76.94937877377922!3d11.071909453676524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1745306683237!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen loading="lazy referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
   </section>
+
+
+  
+
+
+
 
   <footer>
     &copy; 2025 Food for Hunger. All rights reserved.
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
     function toggleNote() {
       const note = document.getElementById('charityNote');
       note.classList.toggle('hidden');
     }
+
+    new Swiper('.swiper', {
+      loop: true,
+      autoplay: { delay: 3000 },
+      pagination: { el: '.swiper-pagination' },
+    });
   </script>
+
+<script>
+  const form = document.getElementById('contactForm');
+  const confirmation = document.getElementById('formConfirmation');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        form.reset();
+        confirmation.textContent = '✅ Thank you! Your message has been sent.';
+        confirmation.style.backgroundColor = '#e6ffe6';
+        confirmation.style.border = '2px solid #8ccf8c';
+        confirmation.style.color = '#2e662e';
+        confirmation.style.display = 'block';
+      } else {
+        confirmation.textContent = '⚠️ Something went wrong. Please try again.';
+        confirmation.style.backgroundColor = '#ffe6e6';
+        confirmation.style.border = '2px solid #cf8c8c';
+        confirmation.style.color = '#662e2e';
+        confirmation.style.display = 'block';
+      }
+    } catch (error) {
+      confirmation.textContent = '⚠️ Error submitting form.';
+      confirmation.style.backgroundColor = '#ffe6e6';
+      confirmation.style.border = '2px solid #cf8c8c';
+      confirmation.style.color = '#662e2e';
+      confirmation.style.display = 'block';
+    }
+  });
+</script>
+
+<div class="social-buttons">
+  <a href="https://wa.me/918946080097" class="social-btn whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+    <span>WhatsApp</span>
+  </a>
+  <a href="https://www.facebook.com/yourpage" class="social-btn facebook" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+    <span>Facebook</span>
+  </a>
+  <a href="https://www.instagram.com/ae_crazy_edit" class="social-btn instagram" target="_blank">
+    <i class="fab fa-instagram"></i>
+    <span>Instagram</span>
+  </a>
+  <a href="mailto:youremail@example.com" class="social-btn email">
+    <i class="fas fa-envelope"></i>
+    <span>Email</span>
+  </a>
+  <a href="https://www.youtube.com/yourchannel" class="social-btn youtube" target="_blank">
+    <i class="fab fa-youtube"></i>
+    <span>YouTube</span>
+  </a>
+</div>
+ 	
+
+
 
 </body>
 </html>
