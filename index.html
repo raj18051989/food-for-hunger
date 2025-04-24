@@ -320,12 +320,43 @@
  }
 .social-btn.youtube { background-color: #ff0000; }
 
+#videos {
+  padding: 20px;
+  background: #f4fff4;
+  text-align: center;
+}
+
+.videoSwiper {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+}
+
+.swiper-slide video {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.caption {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
 
   </style>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
+<!-- Swiper CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
 
@@ -370,9 +401,19 @@
       <div class="charity-note hidden" id="charityNote">
         <span class="icon">🙏</span>
         <div class="charity-text">
-          <p><strong>Food charity is appreciated but entirely your choice.</strong> It is optional, not mandatory.</p>
-          <p>You can contribute food to those in need as a way to celebrate your or your family’s special events...</p>
-          <p class="tamil-text"><strong>உணவு சேவை வரவேற்கப்படுகின்றது... கட்டாயமல்ல.</strong></p>
+          <p><strong>Food charity is appreciated but entirely your choice. It is optional, not mandatory.</strong></p>
+          <p><strong>You can contribute food to those in need as a way to celebrate your or your family’s special events like Birthdays or wedding anniversaries, 
+          and receive blessings in return.</strong></p>
+
+	<p><strong>Recommending specific organizations or individuals for donations goes against the guidelines of our community.    </strong> 
+
+
+
+          <p class="tamil-text"><strong>உணவு சேவை வரவேற்கப்படுகின்றது, ஆனால் இது முழுவதுமாக உங்கள் தேர்வாகும். இது கட்டாயமல்ல, விருப்பமானது மட்டுமே.</strong></p>
+          <p class="tamil-text"><strong>உங்கள் பிறந்தநாள், திருமண ஆண்டு விழா போன்ற சிறப்பு நிகழ்ச்சிகளை கொண்டாட தேவையானவர்களுக்கு உணவை வழங்கலாம், இதன் மூலம் ஆசீர்வாதங்களை பெறலாம்.</strong></p>
+          <p class="tamil-text"><strong>குறிப்பிட்ட அமைப்புகள் அல்லது தனிநபர்களுக்காக நன்கொடை வழங்க பரிந்துரைப்பது, எங்கள் சமூகத்தின் வழிகாட்டுதல்களுக்கு எதிரானதாகும்.</strong></p>
+
+
         </div>
       </div>
     </div>
@@ -380,7 +421,7 @@
 
 
 
-  <section id="about">
+<section id="about">
     <h2>About Us</h2>
 <div class="timeline">
 
@@ -392,21 +433,71 @@
 
 
 
+
  <section class="meal-counter">
     Meals Served: <span id="mealCount">100,000+</span>
   </section>
 
-  <section id="gallery">
-    <h2>Gallery</h2>
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="https://raj18051989.github.io/food-for-hunger/images/food1.jpg" /></div>
-        <div class="swiper-slide"><img src="https://raj18051989.github.io/food-for-hunger/images/food2.jpg" /></div>
-        <div class="swiper-slide"><img src="https://raj18051989.github.io/food-for-hunger/images/food3.jpg" /></div>
-        <div class="swiper-slide"><img src="https://raj18051989.github.io/food-for-hunger/images/food4.jpg" /></div>
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <!-- Image slides -->
+      <div class="swiper-slide"><img src="https://raj18051989.github.io/food-for-hunger/images/food1.jpg" /></div>
+      <div class="swiper-slide"><img src="https://raj18051989.github.io/food-for-hunger/images/food2.jpg" /></div>
+      <div class="swiper-slide"><img src="https://raj18051989.github.io/food-for-hunger/images/food3.jpg" /></div>
+	<div class="swiper-slide"><img src="https://raj18051989.github.io/food-for-hunger/images/food4.jpg" /></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+
+
+<section id="videos">
+  <h2>Videos / வீடியோக்கள்</h2>
+  <div class="swiper videoSwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <video controls>
+          <source src="https://raj18051989.github.io/food-for-hunger/videos/foodservingtwo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <p class="caption">Distributing meals to the homeless / இல்லாதவர்களுக்கு உணவுப் பாக்கெட்டுகள் வழங்குதல்</p>
+      </div>
+
+      <div class="swiper-slide">
+        <video controls>
+          <source src="https://raj18051989.github.io/food-for-hunger/videos/foodservingtwo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <p class="caption">Distributing meals to the homeless / இல்லாதவர்களுக்கு உணவுப் பாக்கெட்டுகள் வழங்குதல்</p>
+      </div>
+
+      <div class="swiper-slide">
+        <video controls>
+          <source src="https://raj18051989.github.io/food-for-hunger/videos/foodservingone.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <p class="caption">Distributing meals to the homeless / இல்லாதவர்களுக்கு உணவுப் பாக்கெட்டுகள் வழங்குதல்</p>
       </div>
     </div>
-  </section>
+
+    <!-- Swiper Navigation -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+    <!-- Swiper Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+
+
+
+
+
+
 
   <section id="timeline">
     <h2>Our Journey</h2>
@@ -532,6 +623,20 @@
 </div>
  	
 
+<script>
+  const videoSwiper = new Swiper('.videoSwiper', {
+    loop: true,
+    spaceBetween: 30,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
+  });
+</script>
 
 
 
