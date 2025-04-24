@@ -347,6 +347,8 @@
   </style>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 
 
 <!-- Swiper CSS -->
@@ -438,6 +440,8 @@
     Meals Served: <span id="mealCount">100,000+</span>
   </section>
 
+
+
 <section id="gallery">
   <h2>Gallery</h2>
   <div class="swiper">
@@ -446,11 +450,18 @@
       <div class="swiper-slide"><img src="https://raj18051989.github.io/food-for-hunger/images/food1.jpg" /></div>
       <div class="swiper-slide"><img src="https://raj18051989.github.io/food-for-hunger/images/food2.jpg" /></div>
       <div class="swiper-slide"><img src="https://raj18051989.github.io/food-for-hunger/images/food3.jpg" /></div>
-	<div class="swiper-slide"><img src="https://raj18051989.github.io/food-for-hunger/images/food4.jpg" /></div>
+      <div class="swiper-slide"><img src="https://raj18051989.github.io/food-for-hunger/images/food4.jpg" /></div>
     </div>
+
+    <!-- Pagination -->
     <div class="swiper-pagination"></div>
+
+    <!-- Navigation buttons -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
   </div>
 </section>
+
 
 
 
@@ -637,6 +648,26 @@
     }
   });
 </script>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    spaceBetween: 20,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    // No autoplay config, so it's disabled
+  });
+</script>
+
 
 
 
