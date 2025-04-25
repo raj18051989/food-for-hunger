@@ -343,6 +343,29 @@
   font-size: 16px;
   color: #333;
 }
+.poster-section {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f8fff8;
+}
+
+.poster-section h2 {
+  font-size: 2rem;
+  color: #2d7a2d;
+  margin-bottom: 20px;
+}
+
+.poster-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.poster-container img:hover {
+  transform: scale(1.03);
+}
 
   </style>
 
@@ -359,6 +382,7 @@
 
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 
 
 
@@ -421,6 +445,17 @@
     </div>
   </div>
 
+
+
+<section id="poster" class="poster-section">
+  <h2>Our Charity Poster</h2>
+  <div class="poster-container">
+    <a href="assets/images/poster.jpg" target="_blank">
+     <img src="https://raj18051989.github.io/food-for-hunger/assets/poster.jpg"  alt="Food for Hunger Poster" />
+
+    </a>
+  </div>
+</section>
 
 
 <section id="about">
